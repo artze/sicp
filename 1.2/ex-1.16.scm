@@ -21,11 +21,11 @@
 ; Iterative algorithm for fast-expt
 
 (define (fast-expt-iter b n)
-  (define (iter b n acc)
+  (define (iter b n a)
     (cond
-      ((= n 0) acc)
-      ((even? n) (iter (square b) (/ n 2) acc))
-      (else (iter b (- n 1) (* acc b)))
+      ((= n 0) a)
+      ((even? n) (iter (square b) (/ n 2) a))
+      (else (iter b (- n 1) (* a b)))
     )
   )
   (iter b n 1)
