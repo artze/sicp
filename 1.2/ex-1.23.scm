@@ -103,13 +103,15 @@
 ; Comment/Uncomment the related block above to toggle between the
 ; 2 scenarios
 
-; 1x10^x    millis  millis  millis    avg              Ratio to Prev.
-; 10        25      33      22        26.6666666667   
-; 11        71      72      72        71.6666666667     2.6875
-; 12        211     214     215       213.3333333333    2.976744186
-; 13        678     676     656       670               3.140625
-; 14        2106    2072    2082      2086.6666666667   3.1144278607
-; 15        6553    6613    6574      6580              3.1533546326
 
-; The above results shows that it is ~1.9 times faster than the 
+; 1x10^x  millis  millis  millis    avg               Ratio to Prev    Num of times faster
+; 10      22      23      23        22.6666666667                      2.01
+; 11      69      74      70        71                 3.1323529412    1.93
+; 12      207     219     206       210.6666666667     2.9671361502    1.97
+; 13      646     652     640       646                3.0664556962    2.00
+; 14      2045    2090    2086      2073.6666666667    3.2100103199    1.96
+; 15      6568    6562    6575      6568.3333333333    3.1674971869    1.97
+
+
+; The above results shows that it is indeed ~2 times faster than the 
 ; implementation in ex.1.22.
