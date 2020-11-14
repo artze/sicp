@@ -29,7 +29,7 @@
       (else (find-divisor n (+ a 2)))
     )
   )
-  (find-divisor n 2)
+  (find-divisor n 3)
 )
 
 (define (is-prime? x)
@@ -98,8 +98,8 @@
 ; - Added function call 'next'
 ; - Added if evaluation
 
-; We will test the hypothesis above by replacing the 'next' function
-; by simply adding 2 and starting from 10...1
+; We will test the hypothesis above by removing the 'next' function
+; and simply using 3 as the starting point
 ; Comment/Uncomment the related block above to toggle between the
 ; 2 scenarios
 
