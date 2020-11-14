@@ -72,12 +72,12 @@
 ; (timed-prime-test 1000000000000000)
 
 ; Scenario 2
-(timed-prime-test 10000000001)
-(timed-prime-test 100000000001)
-(timed-prime-test 1000000000001)
-(timed-prime-test 10000000000001)
-(timed-prime-test 100000000000001)
-(timed-prime-test 1000000000000001)
+(timed-prime-test 10000000000)
+(timed-prime-test 100000000000)
+(timed-prime-test 1000000000000)
+(timed-prime-test 10000000000000)
+(timed-prime-test 100000000000000)
+(timed-prime-test 1000000000000000)
 
 
 ; ===== Analysis =====
