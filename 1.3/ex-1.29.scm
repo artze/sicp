@@ -1,3 +1,4 @@
+(flonum-print-precision 17)
 (define (sum term a next b)
   (if
     (> a b)
@@ -31,5 +32,5 @@
   (* x x x)
 )
 
-(integral-simpson cube 0 1 100)
-(integral-simpson cube 0 1 1000)
+(print (integral-simpson cube 0 1 100))
+(print (integral-simpson cube 0 1 1000))
