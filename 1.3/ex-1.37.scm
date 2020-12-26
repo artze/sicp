@@ -1,26 +1,26 @@
 ; Recursive Process
 (define (cont-frac-recur n d k)
-  (define (recur n d k c)
-    (if (= c k)
-      (/ (n c) (d c))
+  (define (recur i)
+    (if (= k i)
+      (/ (n i) (d i))
       (/
-        (n c)
-        (+ (d c) (recur n d k (+ c 1)))
+        (n i)
+        (+ (d i) (recur (+ i 1)))
       )
     )
   )
-  (recur n d k 1)
+  (recur 1)
 )
 
 ; Iterative Process
 (define (cont-frac-iter n d k)
-  (define (iter n d k temp)
-    (if (= k 1)
-      (/ (n k) temp)
-      (iter n d (- k 1) (+ (d (- k 1)) (/ (n k) temp)))
+  (define (iter k result)
+    (if (= k 0)
+      result
+      (iter (- k 1) (/ (n k) (+ (d k) result)))
     )
   )
-  (iter n d (- k 1) (+ (d (- k 1)) (/ (n k) (d 3))))
+  (iter (- k 1) (/ (n k) (d k)))
 )
 
 (print (cont-frac-recur
