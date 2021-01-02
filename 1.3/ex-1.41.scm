@@ -16,5 +16,13 @@
 )
 
 ; The following is equivalent to above
+; How it expands:
+; ((double (double double)) f)
+; (((double double) (double double)) f)
+; ((double double) (double (double f)))
+; (double (double (double (double f))))
+
+
 (print
-  ((double (double (double (double inc)))) 5))
+  ((double (double (double (double inc)))) 5)
+)
