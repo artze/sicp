@@ -13,23 +13,47 @@
 )
 
 ; iterative-improve procedure
+
+; APPROACH 1
+; This approach is less readable, and forces
+; the improve procedure to be called at least 
+; twice, i.e. in the first call, next already 
+; consists of 2 improve calls
+; 
+; But it is interesting in that the improve
+; procedure is 'accumulated' and called all
+; at once at the end.
+
+; (define (iterative-improve good-enough? improve)
+;   (lambda (guess)
+;     (define (iter i f)
+;       (let
+;         (
+;           (
+;             next ((compose improve f) guess)
+;           )
+;         )
+;         (if (good-enough? (f guess) next)
+;           next
+;           (iter (+ i 1) (repeated improve i))
+;         )
+;       )
+;     )
+;     (iter 1 improve)
+;   )
+; )
+
+; APPROACH 2
 (define (iterative-improve good-enough? improve)
-  (lambda (guess)
-    (define (iter i f)
-      (let
-        (
-          (
-            next ((compose improve f) guess)
-          )
-        )
-        (if (good-enough? (f guess) next)
-          next
-          (iter (+ i 1) (repeated improve i))
-        )
+  (define (iter guess)
+    (let ((next (improve guess)))
+      (if (good-enough? guess next)
+        next
+        (iter next)
       )
     )
-    (iter 1 improve)
   )
+  (lambda (guess) (iter guess))
 )
 
 ; square-root procedure
