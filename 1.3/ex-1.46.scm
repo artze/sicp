@@ -24,7 +24,7 @@
         )
         (if (good-enough? (f guess) next)
           next
-          (iter (+ i 1) (repeated f i))
+          (iter (+ i 1) (repeated improve i))
         )
       )
     )
@@ -45,7 +45,7 @@
             (abs (- y z))
             y
           )
-          0.0001
+          0.00001
         )
       )
       (lambda (y) (average y (/ x y)))
